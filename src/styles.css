@@ -1,0 +1,78 @@
+body {
+  background: #f4f6f9;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header nav button {
+  margin-left: 8px;
+  padding: 6px 14px;
+}
+
+.header .active {
+  background: #2f6fed;
+  color: white;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.section {
+  margin-bottom: 25px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+input, select {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.checkbox-group label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.save {
+  background: #2f6fed;
+  color: white;
+  padding: 10px 20px;
+}
+
+.cancel {
+  background: #ccc;
+  padding: 10px 20px;
+}
