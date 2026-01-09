@@ -1,95 +1,227 @@
-body {
-  background: #f3f5f8;
-  font-family: Arial, sans-serif;
+/* ====== BASE PAGE ====== */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto; /* page scroll only if needed */
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f5f7fa;
+  color: #1f2937;
+  box-sizing: border-box;
 }
 
+/* ====== APP CONTAINER ====== */
 .app {
-  padding: 20px;
+  min-height: 100vh;
+  overflow: visible; /* 🔑 allow natural scroll */
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.tabs button {
-  margin-left: 10px;
-  padding: 8px 14px;
-  border: none;
-  background: #e4e7eb;
-}
-
-.tabs .active {
-  background: #2f5bea;
-  color: white;
-}
-
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-}
-
-.user-info {
-  display: grid;
-  grid-template-columns: 200px 1fr 1fr;
-  gap: 20px;
-}
-
-.profile img {
-  width: 120px;
-  border-radius: 50%;
-}
-
-.btn-primary {
-  margin-top: 10px;
-  background: #2f5bea;
-  color: white;
-  border: none;
-  padding: 10px;
-}
-
+/* ====== ROWS & GRIDS ====== */
 .row {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
+  margin-top: 12px;
 }
 
-.status {
-  margin-top: 10px;
-  font-weight: bold;
+/* 2-COLUMN ROW */
+.two-column {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 18px;
+  align-items: stretch;
 }
 
-.active-dot {
-  width: 10px;
-  height: 10px;
-  background: green;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 5px;
-}
-
-.grid-3 {
+/* 3-COLUMN ROW */
+.three-column {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 20px;
+  gap: 12px;
+  align-items: start;
 }
 
-.box {
-  background: #f9fafc;
-  padding: 15px;
+/* FULL WIDTH ROW */
+.row.full {
+  width: 100%;
+}
+
+/* ====== CARDS ====== */
+.card {
+  border: 0px;
+  background: #e0e7ff;
+  border-radius: 10px;
+  padding: 5px;
+  .card.wide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+/* Left column stack */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ActivityHistory full width inside left */
+.left-column .card {
+  width: 100%;
+}
+
+  
+  /* Black border for neat separation */
+  border: 0px solid #111827;
+
+  /* No shadow for clean look */
+  box-shadow: none;
+
+  /* No inner scroll */
+  overflow: visible;
+  height: auto;
+}
+
+/* ====== HEADINGS ====== */
+h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 13px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* ====== INPUTS & SELECTS ====== */
+input,
+select {
+  width: 90%;
+  padding: 6px 8px;
+  margin-bottom: 6px;
   border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 16px;
 }
 
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* ====== USER INFO SPECIFIC ====== */
+.user-row {
+  display: flex;
+  gap: 12px;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  font-size: 24px;
+  background: #e0e7ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px; /* controls both row + column spacing */
+}
+
+
+/* ====== TABLE ====== */
 table {
   width: 100%;
   border-collapse: collapse;
+  font-size: 12px;
 }
 
 th, td {
-  border-bottom: 1px solid #ddd;
   padding: 8px;
+  border-bottom: 1px solid #e5e7eb;
   text-align: left;
 }
+
+thead {
+  background-color: #f3f4f6;
+}
+
+/* ====== HEADER RIGHT TABS ====== */
+.tabs {
+  display: flex;
+  gap: 6px;
+  background: #e5e7eb;
+  padding: 4px;
+  border-radius: 999px; /* pill background */
+}
+
+.tab {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1f2937;
+  cursor: pointer;
+}
+
+/* ACTIVE TAB BLUE BUTTON */
+.tab.active {
+  background: #2563eb;
+  color: #ffffff;
+  border: 1px solid #2563eb;
+}
+
+/* ====== HEADER BUTTONS ====== */
+.header-actions button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.save {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.cancel {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+
+/* ====== JOB ASSIGNMENT FIELDS ====== */
+.field {
+  margin-bottom: 8px;
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+.field select {
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 12px;
+  background-color: #ffffff;
+  color: #1f2937;
+}
+
+.field select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
